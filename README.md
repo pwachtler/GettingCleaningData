@@ -35,7 +35,11 @@ README prepared by Paul Wachtler
 
 			2) Unzip the dataset folder and store locally on your computer
 
-			2) Download the run_analysis.R script here: https://github.com/pwachtler/GettingCleaningData/blob/master/run_analysis.R
+			2) Navigate to the run_analysis.R script here: https://github.com/pwachtler/GettingCleaningData/blob/master/run_analysis.R
+
+			3) Click on "Raw" in the top right above the script text
+
+			5) Right click the text and select "Save as..."
 
 			3) Save the run_analysis.R script to the same folder that you saved the unzipped dataset folder
 
