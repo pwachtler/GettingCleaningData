@@ -35,23 +35,23 @@ README prepared by Paul Wachtler
 
 			2) Unzip the dataset folder and store locally on your computer
 
-			2) Navigate to the run_analysis.R script here: https://github.com/pwachtler/GettingCleaningData/blob/master/run_analysis.R
+			3) Navigate to the run_analysis.R script here: https://github.com/pwachtler/GettingCleaningData/blob/master/run_analysis.R
 
-			3) Click on "Raw" in the top right above the script text
+			4) Click on "Raw" in the top right above the script text
 
 			5) Right click the text and select "Save as..."
 
-			3) Save the run_analysis.R script to the same folder that you saved the unzipped dataset folder
+			6) Save the run_analysis.R script to the same folder that you saved the unzipped dataset folder
 
-			4) Open your R console
+			7) Open your R console
 
-			5) Change your working directory to the folder that contains the dataset and the script
+			8) Change your working directory to the folder that contains the dataset and the script
 				- use the setwd() command for this
 				- use ?setwd to view its help page if you are unfamiliar with this command
 
-			6) Source the script with the following command: source ("run_analysis.R")
+			9) Source the script with the following command: source ("run_analysis.R")
 
-			7) The cleanSet and meanSet datasets will be returned by the script
+			10) The cleanSet and meanSet datasets will be returned by the script
 
 ==================================================================
 
