@@ -53,7 +53,8 @@ README prepared by Paul Wachtler
 
 			9) Source the script with the following command: source ("run_analysis.R")
 
-			10) The cleanSet and meanSet datasets will be returned by the script
+			10) The cleanSet and meanSet datasets will be returned by the script.  The meanSet dataset will display in the Data Viewer
+			
 
 ==================================================================
 
