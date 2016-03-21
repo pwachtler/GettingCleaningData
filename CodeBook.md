@@ -1,5 +1,7 @@
 Getting and Cleaning Data Course Project Code Book
+
 March 21, 2016
+
 Code book prepared by Paul Wachtler
 
 
