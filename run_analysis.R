@@ -11,23 +11,12 @@
     
     ## Dataset two is called meanSet
     ## It contains the average of each variable for each activity and each subject
-
-
-## Getting Started:
-  
-    ## In order to begin, please download the UCI HAR dataset zip folder to your computer:
-    ## https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-    
-    ## Once you have downloaded the zipped folder, make sure to extract all of the files to the folder
-    ## you wish to use for your working directory.
-
-    ## After you have unzipped the files, please change the working directory for your R session
-    ## to the folder that now contains the unzipped UCI HAR files using the setwd() command
-    ## If you need help with setting your working directory, please type ?setwd into your R console
+ 
 
 
 ## Script
 ## From this point on, the script contains instructions to create the two output datasets
+## Please do not modify anything below this point
 
 ##-------------------------------------------------------------------------------------------------------
 ## Load the data
