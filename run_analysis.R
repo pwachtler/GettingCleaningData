@@ -21,6 +21,14 @@
 ##-------------------------------------------------------------------------------------------------------
 ## Load the data
     
+        ##Check that the dplyr library is installed, and if not, install it
+            if(!"dplyr" %in% installed.packages())
+            {
+              install.packages("dplyr")
+            }
+
+    library(dplyr) ## loading the dplyr library for use in table joins
+
     ##Change the working directory to go down a level to retrieve the necessary files
         currentwd<-getwd()
         setwd("UCI HAR Dataset")
@@ -67,7 +75,7 @@
                     colnames(testActivitiesinit)<-"Activity ID"
                     
                     ##Merge test activity table with activity labels table
-                    testActivities<-merge(testActivitiesinit,acLabels,by.x="Activity ID", by.y="Activity ID")
+                    testActivities<-join(testActivitiesinit,acLabels,by=c("Activity ID"="Activity ID"))
                     testActivities<-testActivities[,2]  ## Removes Activity IDs
                     
                     
@@ -101,7 +109,7 @@
                     colnames(trainActivitiesinit)<-"Activity ID"
                     
                     ##Merge training activity table with activity labels table
-                    trainActivities<-merge(trainActivitiesinit,acLabels,by.x="Activity ID", by.y="Activity ID")
+                    trainActivities<-join(trainActivitiesinit,acLabels,by=c("Activity ID"="Activity ID"))
                     trainActivities<-trainActivities[,2]  ## Removes Activity IDs
                     
                     
@@ -125,30 +133,36 @@
       
 
 ##-------------------------------------------------------------------------------------------------------
-## Dataset TWO Creation
+## Dataset Two Creation
       
       
     ## Loop through the table to get the mean values for each activity, subject, and measurement
-      meanSet<-data.frame(matrix(nrow=30,ncol=1),matrix(nrow=30,ncol=1),matrix(nrow=30,ncol=66))
+      meanSet<-data.frame(matrix(nrow=180,ncol=1),matrix(nrow=180,ncol=1),matrix(nrow=180,ncol=66))
       colnames(meanSet)<-colnames(cleanSet)
       
       ##create table with unique activity and subject combinations
       combos<-unique(cleanSet[,1:2])
+      combos<-combos[order(combos$Subject,combos$Activity),]
+      count<-1
       
       
-      for(i in 1:30)
+      for(i in 1:30) ## loop through each person
       {
         
-        ##Setting values for first two non-numeric columns
-        meanSet[i,1]<-as.character(combos[i,1])
-        meanSet[i,2]<-as.character(combos[i,2])
+        for (j in 1:6) ## loop through each activity
+        {##Setting values for first two non-numeric columns
+        meanSet[count,1]<-as.character(combos[count,1])
+        meanSet[count,2]<-as.character(combos[count,2])
         
         ##Fill other columns with mean values
-        meanSet[i,-1:-2]<-sapply(cleanSet[cleanSet$Subject==combos[i,2],-1:-2],mean)
+        ##meanSet[count,-1:-2]<-sapply(cleanSet[(cleanSet$Subject==combos[count,2]&&cleanSet$Activity==combos[count,1]),-1:-2],mean)
+        meanSet[count,-1:-2]<-sapply(cleanSet[cleanSet$Subject==combos[count,2]&cleanSet$Activity==combos[count,1],-1:-2],mean)
+        count<-count+1
+        }
         
       }
   
-      meanSet<-meanSet[order(meanSet$Activity,meanSet$Subject),]
+      meanSet<-meanSet[order(as.numeric(meanSet$Subject), meanSet$Activity),]
       
       print("Dataset 2: meanSet is now ready and on display in the Data Viewer")
       View(meanSet)
