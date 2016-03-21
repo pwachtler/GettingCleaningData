@@ -150,7 +150,8 @@
   
       meanSet<-meanSet[order(meanSet$Activity,meanSet$Subject),]
       
-      print("Dataset 2: meanSet is now ready")
+      print("Dataset 2: meanSet is now ready and on display in the Data Viewer")
+      View(meanSet)
       
 ##-------------------------------------------------------------------------------------------------------
 ## Navigate back to original working directory and cleanup extra objects
