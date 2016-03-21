@@ -42,6 +42,8 @@ README prepared by Paul Wachtler
 			5) Right click the text and select "Save as..."
 
 			6) Save the run_analysis.R script to the same folder that you saved the unzipped dataset folder
+				Important: When saving the script, make sure to delete any file extensions after the .R,
+				you want to make sure it saves as a .R script file
 
 			7) Open your R console
 
