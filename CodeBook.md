@@ -27,7 +27,7 @@ Table: cleanSet
 	Variables in cleanSet:
 
 	Activity	
-		: Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 …
+		: Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 â€¦
 		: Activity Name
 		
 	Subject	
@@ -312,7 +312,7 @@ Table: meanSet
 
 
 	Number of Variables: 68
-	Number of Records: 30
+	Number of Records: 180
 
 
 	Variables in meanSet:
